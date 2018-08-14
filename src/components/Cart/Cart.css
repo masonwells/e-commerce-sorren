@@ -1,0 +1,25 @@
+.itemInCart {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  border-bottom: thin solid #777;
+}
+.itemInCart img {
+  height: 100px;
+  width: 100px;
+}
+.itemInCart * {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.checkOut {
+  padding-top: 100px;
+  display: flex;
+  justify-content: space-around;
+ 
+}
+
+.checkOut img {
+  height: 300px;
+  width: 300px;
+}

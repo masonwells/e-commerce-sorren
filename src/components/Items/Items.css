@@ -1,0 +1,10 @@
+.allBoxes {
+  padding-top: 100px;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+}
+.photo {
+  height: 300px;
+  width: 300px;
+}

@@ -1,0 +1,51 @@
+.all1 {
+  padding-top: 100px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+.supremeBox{
+height: 300px;
+width: 100px;;
+
+}
+.supremePhoto{
+  height: 300px;
+  width: 300px;
+}
+.bapeBox{
+  height: 300px;
+  width: 100px;
+}
+.bapePhoto{
+  height: 300px;
+  width: 300px;;
+}
+.FOGBox{
+  height: 300px;
+  width: 100px;
+  
+  }
+  .FOGPhoto{
+      height: 300px;
+      width: 300px;
+  }
+  .palaceBox{
+      height: 300px;
+      width: 100px;
+      
+      }
+      .palacePhoto{
+          height: 300px;
+          width: 300px;
+      }
+      .offWhiteBox{
+          height: 300px;
+          width: 100px;
+         
+          }
+          .offWhitePhoto{
+              height: 300px;
+              width: 300px;
+          }

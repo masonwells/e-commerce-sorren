@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+.boxcoverHide {
+    
+    
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: absolute;
+    margin-left: 100vw;
+    transition: 1s ease-in-out;
+    
+}
+
+.boxcoverShow{
+   
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: absolute;
+    transition: 1s ease-in-out;
+    
+    
+    /* animation: slide .5s; */
+}
+/* .fadeHide{
+    
+} */
+.fadeShow{
+    background-color: grey;
+    opacity:.9;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.box1 {
+    
+    width: 66vw;
+     
+}
+.box2 {
+    
+    
+    
+    box-shadow: -2px 0px 10px 0px #7A7A7A;
+    
+    width: 34vw;
+    margin-right: 0px;
+    background-color: white;
+}
+.site-nav_link {
+font-family: 'Open Sans Condensed', sans-serif;
+font-weight: 300;
+letter-spacing: .0125rem;
+font-style: normal;
+text-transform: none;
+font-size: 30px;
+letter-spacing: 0.075rem;
+text-transform: uppercase;
+}
+a {
+    color: black;
+    text-decoration: none;
+    background: transparent;
+}
+
+
+.writing {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-top: 70px;
+}

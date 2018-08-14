@@ -1,0 +1,28 @@
+.all {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.smallBox{
+  
+  width: 60vw;
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+.insta {
+  width: 100px;
+  height: 100px;
+}
+.twitter {
+  width: 100px;
+  height: 100px;
+}
+.grailed{
+  width: 100px;
+  height: 100px;
+}
