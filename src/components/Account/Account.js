@@ -13,7 +13,7 @@ class Account extends Component {
     }
   }
   componentDidMount() {
-    axios.get('/api/shop/getProductsOrdered/' + this.props.userId).then(response => {
+    axios.get('/api/shop/getProductsOrdered/' + this.props.id).then(response => {
       console.log(response.data);
       this.setState({ orders: response.data })
 
@@ -52,6 +52,6 @@ class Account extends Component {
 
 function mapStateToProps(state) {
 
-  return { orders: state.orders, userId: state.userId }
+  return { orders: state.orders, id: state.id }
 }
 export default connect(mapStateToProps, { getAllOrders })(Account)

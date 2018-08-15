@@ -11,8 +11,8 @@ require('dotenv').config();
 
 class Cart extends Component {
   placeOrder() {
-    console.log('id and cart', this.props.userId, this.props.cart)
-    axios.post('/api/shop/addProductsOrdered', { user_id: this.props.userId, cart: this.props.cart })
+    console.log('id and cart', this.props.id, this.props.cart)
+    axios.post('/api/shop/addProductsOrdered', { user_id: this.props.id, cart: this.props.cart })
   }
   onToken = (token) => {
     token.card = void 0;
@@ -67,7 +67,7 @@ class Cart extends Component {
 function mapStateToProps(state) {
   return {
     cart: state.cart,
-    userId: state.userId
+    id: state.id
   };
 }
 

@@ -15,7 +15,7 @@ const initialState = {
   paid: '',
   allItems: [],
   cart: [],
-  userId: 0,
+  id: 0,
   orders: []
 
 }
@@ -61,7 +61,7 @@ export default function reducer(state = initialState, action) {
       return Object.assign({}, state, { cart: newCart });
 
     case SET_USER:
-      return Object.assign({}, state, { userId: action.payload })
+      return Object.assign({}, state, action.payload)
 
     case GET_ALL_ORDERS:
       return Object.assign({}, state, { orders: action.payload })
