@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
-    
+@import url('https://use.fontawesome.com/releases/v5.2.0/css/all.css'); 
 
 .Header {
     display: flex;
@@ -12,26 +12,37 @@
     width: 95%;
     color: black;
     align-items: center;
-    z-index: 1;
      
 }
 .logo{
     font-size: 30px;
-    margin-left: 50px;
     font-family: 'Open Sans Condensed', sans-serif;
+    padding: 0 0 0 75px;
     
 }
 .logo:hover{
  color: black;
 }
-.cartandmenu{
+
+.cartandmenu ul{
     display: flex;
-    flex-direction: row;
-    justify-content:space-between;
+    flex-direction:row;
+    justify-content:space-around;
     font-family: 'Open Sans Condensed', sans-serif; 
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+
 }
+
+
+.cartandmenu li {
+    padding:0 15px;
+}
+
+
 .menu{
-    height: 20px;
-    width: 30px;
-    
+    height: 17px;
+    width: 15px;
+    z-index:2;
 }

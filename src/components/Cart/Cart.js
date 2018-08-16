@@ -14,23 +14,36 @@ class Cart extends Component {
     console.log('id and cart', this.props.id, this.props.cart)
     axios.post('/api/shop/addProductsOrdered', { user_id: this.props.id, cart: this.props.cart })
   }
+
+
+
   onToken = (token) => {
     token.card = void 0;
     var total = this.props.cart.reduce((total, item) => {
       return total + item.price;
     }, 0);
     total = total * 100;
-
-    // console.log('token', token);
+    console.log('token', token, 'total', total);
     axios.post('/api/payment', { token, amount: total }).then(response => {
       swal("Thank You For Your Purchase", "", "success");
       this.placeOrder()
     }).catch(error => console.log(error));
   }
 
+
+
+
+
+  // axios.delete('/api/clearcart')
+  // .then(response=>{
+  //     this.setState({
+  //         toCart: true
+  // })
+
   render() {
     // console.log('whole cart', this.props.cart);
     // console.log(process.env)
+    console.log(this.props.id)
     var total = this.props.cart.reduce((total, item) => {
       return total + item.price;
     }, 0);
@@ -58,6 +71,7 @@ class Cart extends Component {
             stripeKey={process.env.REACT_APP_STRIPE_PUB_KEY}
             amount={total}
           />
+            {/* {this.state.toCart === true ? <Redirect to="/cart"/>  : ''} */}
         </div>
       </div>
     )

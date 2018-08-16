@@ -28,6 +28,11 @@ class Home extends Component {
 
   // }
 
+  boxStyling (box) {
+    return { background: `linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url(${box}) center top`, backgroundSize: 'cover', }
+}
+
+
   render() {
 
     return (
@@ -36,23 +41,26 @@ class Home extends Component {
         <div className='background'>
           <img className='largeimg' src={mainPhoto} alt='failed' />
         </div>
+
         <div className='lowerLevelBoxes'>
+          
           <Link to="/brands">
-            <div className='brandsBox'>
-              <img className='brandsPhoto' src={brandsPhoto} alt='brand photo' />
+            <div className='boxItem'>
+              <div className='brandsPhoto' style={this.boxStyling(brandsPhoto)} alt='brand photo'></div>
               <div className="centered">BRANDS</div>
             </div>
           </Link>
+
           <Link to="/shop">
-            <div className='shopBox'>
-              <img className='shopPhoto' src={shopPhoto} alt='shop photo' />
+            <div className='boxItem'>
+              <div className='shopPhoto' style={this.boxStyling(shopPhoto)} alt='shop photo'></div>
               <div className="centered">SHOP</div>
             </div>
           </Link>
 
           <Link to="/follow">
-            <div className='followBox'>
-              <img className='followPhoto' src={followPhoto} />
+            <div className='boxItem'>
+              <div className='followPhoto' style={this.boxStyling(followPhoto)}></div>
               <div className="centered">FOLLOW</div>
             </div>
           </Link>

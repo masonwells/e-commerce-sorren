@@ -2,37 +2,42 @@
 .total{
     
     background-size: cover;
-    overflow:scroll;
-    
     position: relative;
+    margin:0px 25px 25px 25px;
+    
+
 }
+
+
 .background{
 
-height: 100vh;
-width: 100vw;
+height: 95vh;
+width: 100%;
 padding-top: 80px;
-margin-left: 50px;
-margin-right: 50px;
-margin-bottom: 50px;
-
+margin-bottom: 20px;
+overflow:hidden;
 
 }
 .largeimg{
-    width: 93%;
-    height: 90%;
+    display:flex;
+    width: 100%;
+    height: 100%;
+    border-radius:3px;
+
     
 }
 .lowerLevelBoxes {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
+
+
 .brandsPhoto {
-    position: relative;
+    /* position: relative; */
     height: 500px;
-    width: 400px;
-    
-    
+    width: 400px;    
 }
 .shopPhoto {
     width: 400px;
@@ -42,34 +47,28 @@ margin-bottom: 50px;
 .followPhoto {
     height: 500px;
     width: 400px;
-    
-    
+       
 }
-.brandsBox {
+
+
+.boxItem {
     position: relative;
     text-align: center;
     color: white;
     font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 100px;
+    font-size: 80px;
     font-weight: bold;
+    border-radius: 3px;
+    overflow: hidden;
+    transition: .25s;
+    margin-top: 15px;
     
 }
-.followBox{
-    position: relative;
-    text-align: center;
-    color: white;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 100px;
-    font-weight: bold;
+.boxItem:hover {
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.70);
+    opacity: 0.8;
 }
-.shopBox {
-    position: relative;
-    text-align: center;
-    color: white;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 100px;
-    font-weight: bold;
-}
+
 .centered {
     position: absolute;
     top: 50%;

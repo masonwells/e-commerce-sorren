@@ -2,11 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const massive = require('massive');
-const axios = require('axios');
+const axios = require('axios')
+cors = require('cors')
 // const ctrl = require('./config.js')
 const shop_ctr = require('./controllers/shop_controllers.js')
-const stripe = require('stripe')(process.env.STRIPE_PRV_KEY)
 require('dotenv').config();
+
+const stripe = require('stripe')(process.env.PRIVATE_KEY)
 
 
 const { SERVER_PORT, REACT_APP_DOMAIN, REACT_APP_CLIENT_ID, CLIENT_SECRET, SESSION_SECRET, CONNECTION_STRING } = process.env
@@ -23,10 +25,12 @@ app.use(bodyParser.json());
 app.use(
   session({
     secret: SESSION_SECRET,
-    resave: false,
+    resave: true,
     saveUninitialized: false
   })
 )
+
+app.use(cors())
 
 
 //AUTH ZERO
@@ -75,8 +79,8 @@ app.get('/auth/callback', async (req, res) => {
 
 
 //Endpoints
-// app.post('/api/shop/addOrder', shop_ctr.add_order );
-// app.post('/api/shop/addProduct', shop_ctr.add_product);
+app.post('/api/shop/addOrder', shop_ctr.add_order );
+app.post('/api/shop/addProduct', shop_ctr.add_product);
 // app.post('/api/shop/addUser', auth_ctr.addUser);
 app.post('/api/shop/addProductsOrdered', shop_ctr.add_productsOrdered);
 app.get('/api/items', shop_ctr.getItems);
@@ -113,12 +117,10 @@ app.post('/api/payment', function (req, res, next) {
     currency: 'usd',
     source: req.body.token.id,
     description: 'Test charge from react app'
-  }, function (err, charge) {
-    if (err) return res.sendStatus(500)
-    return res.sendStatus(200);
-    // if (err && err.type === 'StripeCardError') {
-    //   // The card has been declined
-    // }
+  }, function(err, charge){
+    if (err) {return res.sendStatus(500)}
+    else{
+    return res.sendStatus(200)}
   });
 });
 

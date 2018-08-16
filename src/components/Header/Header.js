@@ -37,10 +37,10 @@ export default class Header extends Component {
             <div className='logo'>BODEGA's</div>
           </a>
           <div className='cartandmenu'>
-            < Link to='/cart'>
-              <div className='cart'>cart</div>
-            </Link>
-            <img onClick={() => { this.toggleBox(), this.getClass() }} className='menu' src={menuImg} alt='menu' />
+            <ul>
+              <Link to='/cart'><li className="cart">Cart</li></Link>
+              <li onClick={() => { this.toggleBox(), this.getClass() }} className='menu'>Menu</li>
+            </ul>   
           </div>
         </div>
       </div>
@@ -48,3 +48,12 @@ export default class Header extends Component {
     )
   }
 }
+
+
+
+{/* <li class="home"><a href="#">Home</a></li>
+</ul>
+<li class="cart"><a href="#">Cart</a></li>
+<li class="contact"><a onClick={() => { this.toggleBox(), this.getClass() }}>Menu</a></li>
+</ul>
+</div> */}

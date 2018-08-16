@@ -8,29 +8,37 @@ import zanerobe from './zanerobe.jpg';
 
 
 export default class brands extends Component {
+
+
+
+  boxStyling (box) {
+  return { background: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(${box}) center top`, backgroundSize: 'cover', }
+}
+
+
   render() {
     return (
       <div>
         <Header />
         <div className='all1'>
           < a href="http://www.supremenewyork.com/index">
-            <div className='supremeBox'>
-              <img className='supremePhoto' src={supreme} />
+            <div className='boxItem'>
+              <div className='supremePhoto' style={this.boxStyling(supreme)}></div>
             </div>
           </a>
           <a href="https://bape.com/index/">
-            <div className='bapeBox'>
-              <img className='bapePhoto' src={bape} />
+            <div className='boxItem'>
+              <div className='bapePhoto' style={this.boxStyling(bape)}></div>
             </div>
           </a>
           <a href="https://fearofgod.com/">
-            <div className='FOGBox'>
-              <img className='FOGPhoto' src={FOG} />
+            <div className='boxItem'>
+            <div className='FOGPhoto' style={this.boxStyling(FOG)}></div>
             </div>
           </a>
           <a href="https://zanerobe.com/">
-            <div className='palaceBox'>
-              <img className='palacePhoto' src={zanerobe} />
+            <div className='boxItem'>
+            <div className='supremePhoto zanerobe' style={this.boxStyling(zanerobe)}></div>
             </div>
           </a>
         </div>
