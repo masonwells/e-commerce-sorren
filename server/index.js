@@ -124,18 +124,20 @@ app.post('/api/payment', function (req, res, next) {
   });
 });
 
-const path = require('path')
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../build/index.html'));
-// })
-
-
-
 
 app.get('/auth/logout', (req, res) => {
   req.session.destroy()
   res.send()
 })
+
+
+
+const path = require('path')
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
+
+
 
 app.listen(SERVER_PORT, () => {
   console.log(`Listening on port ${SERVER_PORT}`)
