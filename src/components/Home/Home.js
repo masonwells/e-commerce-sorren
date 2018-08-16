@@ -38,9 +38,7 @@ class Home extends Component {
     return (
       <div className='total'>
         <Header />
-        <div className='background'>
-          <img className='largeimg' src={mainPhoto} alt='failed' />
-        </div>
+        <div className='background'></div>
 
         <div className='lowerLevelBoxes'>
           
