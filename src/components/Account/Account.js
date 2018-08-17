@@ -4,6 +4,7 @@ import { getAllOrders } from './../../ducks/reducer';
 import axios from 'axios';
 import './Account.css'
 import Header from '../Header/Header';
+import OrderItem from '../OrderItem/OrderItem';
 
 class Account extends Component {
   constructor() {
@@ -16,42 +17,37 @@ class Account extends Component {
     axios.get('/api/shop/getProductsOrdered/' + this.props.id).then(response => {
       console.log(response.data);
       this.setState({ orders: response.data })
-
     })
   }
 
-  
+deleteItem(){
+  axios.delete()
+}
+
+
   render() {
-    console.log(this.state.orders)
-    console.log(this.props)
-    const orders = this.state.orders.map((item, i) => {
-     return (
-        <div className='totalTable'>
-          <div className="tableHeader">
-            <div>Image</div>
-            <div>Name</div>
-            <div>Total</div>
-          </div>
-          <div className="tableInfo">
-            <div className="image"><img src={item.img_url} /></div>
-            <div>{item.name}</div>
-            <div>{item.total}</div>
-          </div>
-        </div>
-      )
-    })
+    const { orders } = this.state;
+    console.log(orders)
     return (
       <div>
         <Header />
-        {orders}
+        {orders.map((e, i) => {
+          return (
+            <OrderItem
+              key={i}
+              id={e.id}
+              name={e.name}
+              total={e.total}
+              userId={e.user_id}
+              orderId={e.order_id}
+              image={e.img_url}             
+            />
+          )
+        })}
       </div>
     )
   }
-
 }
 
-function mapStateToProps(state) {
-
-  return { orders: state.orders, id: state.id }
-}
+function mapStateToProps(state) { return { orders: state.orders, id: state.id } }
 export default connect(mapStateToProps, { getAllOrders })(Account)

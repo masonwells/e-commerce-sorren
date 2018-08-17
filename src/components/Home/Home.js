@@ -41,7 +41,7 @@ class Home extends Component {
         <div className='background'></div>
 
         <div className='lowerLevelBoxes'>
-          
+
           <Link to="/brands">
             <div className='boxItem'>
               <div className='brandsPhoto' style={this.boxStyling(brandsPhoto)} alt='brand photo'></div>
@@ -74,3 +74,4 @@ function mapDispatchToProps(state) {
   return state;
 }
 export default connect(mapDispatchToProps, { setUser })(Home)
+

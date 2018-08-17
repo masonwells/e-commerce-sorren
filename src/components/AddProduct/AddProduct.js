@@ -5,6 +5,8 @@ import './AddProduct.css'
 
 export default class AddProduct extends Component {
 
+//if i have time i will be able to add to my database. on website.
+  
   render() {
     return (
       <div>

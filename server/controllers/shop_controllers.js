@@ -28,7 +28,7 @@ module.exports = {
       .then(response => res.status(200).send(response))
   },
   add_productsOrdered: (req, res, next) => {
-    // console.log('body', req.body)
+    console.log('body', req.body)
     const { user_id, cart } = req.body;
     console.log(user_id, cart)
     const total = cart.reduce((a, b) => {

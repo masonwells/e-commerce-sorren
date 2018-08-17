@@ -15,9 +15,10 @@ const { SERVER_PORT, REACT_APP_DOMAIN, REACT_APP_CLIENT_ID, CLIENT_SECRET, SESSI
 
 
 const app = express();
-massive(process.env.CONNECTION_STRING).then(db => app.set('db', db));
-
 app.use(express.static(`${__dirname}/../build`));
+const path = require('path');
+
+massive(process.env.CONNECTION_STRING).then(db => app.set('db', db));
 app.use(bodyParser.json());
 
 
@@ -79,7 +80,7 @@ app.get('/auth/callback', async (req, res) => {
 
 
 //Endpoints
-app.post('/api/shop/addOrder', shop_ctr.add_order );
+app.post('/api/shop/addOrder', shop_ctr.add_order);
 app.post('/api/shop/addProduct', shop_ctr.add_product);
 // app.post('/api/shop/addUser', auth_ctr.addUser);
 app.post('/api/shop/addProductsOrdered', shop_ctr.add_productsOrdered);
@@ -117,12 +118,14 @@ app.post('/api/payment', function (req, res, next) {
     currency: 'usd',
     source: req.body.token.id,
     description: 'Test charge from react app'
-  }, function(err, charge){
-    if (err) {return res.sendStatus(500)}
-    else{
-    return res.sendStatus(200)}
+  }, function (err, charge) {
+    if (err) { return res.sendStatus(500) }
+    else {
+      return res.sendStatus(200)
+    }
   });
 });
+
 
 
 app.get('/auth/logout', (req, res) => {
@@ -131,13 +134,7 @@ app.get('/auth/logout', (req, res) => {
 })
 
 
-
-const path = require('path')
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build/index.html'));
-})
-
-
+// app.get('*', (req, res) => { res.sendFile(path.join(__dirname, '../build/index.html')) });
 
 app.listen(SERVER_PORT, () => {
   console.log(`Listening on port ${SERVER_PORT}`)

@@ -2,22 +2,24 @@
 .boxcoverHide {
     
     
-    width: 100vw;
+    width: 900px;
     height: 100vh;
     display: flex;
     position: absolute;
+    right: -400px;
     margin-left: 100%;
-    transition: 1s ease-in-out;
+    transition: 0.3s ease-in-out;
     
 }
 
 .boxcoverShow{
    
-    width: 100vw;
+    width: 900px;
     height: 100vh;
     display: flex;
     position: absolute;
-    transition: 1s ease-in-out;
+    right:-30px;
+    transition: 0.3s ease-in-out;
     /* margin-left: 17vw; */
     z-index:1;
     
@@ -32,8 +34,7 @@
 .fadeShow{
     background-color: grey;
     opacity:.9;
-    width: 100vh;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 

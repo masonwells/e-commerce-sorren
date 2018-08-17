@@ -1,8 +1,9 @@
 const initialState = {
-  first_name: '',
-  last_name: '',
-  username: '',
-  auth_id: '',
+  first_name: 'Mason',
+  last_name: 'Brockbank',
+  username: 'masonbrockbank',
+  auth_id: 'google-oauth2|108178934457324039627',
+  email: 'masonbrockbank@gmail.com',
   name: '',
   category: '',
   brand: '',
@@ -15,9 +16,8 @@ const initialState = {
   paid: '',
   allItems: [],
   cart: [],
-  id: 0,
+  id: 1, //change back to zero
   orders: []
-
 }
 
 const GET_ALL_ITEMS = 'GET_ALL_ITEMS';
