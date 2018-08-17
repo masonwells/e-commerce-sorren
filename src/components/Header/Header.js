@@ -38,9 +38,9 @@ export default class Header extends Component {
           </a>
           <div className='cartandmenu'>
             <ul>
-              <Link to='/cart'><li className="cart">Cart</li></Link>
+              <li className="cart"><Link to='/cart'>Cart</Link></li>
               <li onClick={() => { this.toggleBox(), this.getClass() }} className='menu'>Menu</li>
-            </ul>   
+            </ul>
           </div>
         </div>
       </div>

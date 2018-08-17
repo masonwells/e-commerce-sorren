@@ -18,6 +18,23 @@ module.exports = {
       .add_order([fulfilled, total, paid])
       .then(response => res.status(200).send(response))
   },
+  update_order: (req, res) => {
+    const db = req.app.get('db');
+    const { notes } = req.body;
+    const { order_id } = req.params;
+
+    db.update_order([notes, order_id])
+      .then(user => res.status(200).send(user))
+      .catch(err => console.log(`Error Message: ${err}`))
+  },
+  delete_order: (req, res) => {
+    const db = req.app.get('db');
+    const { order_id } = req.params;
+
+    db.delete_order([order_id])
+      .then(user => res.status(200).send(user))
+      .catch(err => console.log(`Error Message: ${err}`))
+  },
   add_product: (req, res, next) => {
     const { name, category, brand, price, description, size, img_url } = req.body;
     const db = req

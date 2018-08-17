@@ -3,5 +3,6 @@ create table productsOrdered (
     user_id integer references users(id),
     product_id integer references products(id), 
     order_id integer references orders(id),
-    quantity integer
+    quantity integer,
+    notes varchar(1000) default ''
 )

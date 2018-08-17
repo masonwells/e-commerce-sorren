@@ -86,7 +86,8 @@ app.post('/api/shop/addProduct', shop_ctr.add_product);
 app.post('/api/shop/addProductsOrdered', shop_ctr.add_productsOrdered);
 app.get('/api/items', shop_ctr.getItems);
 app.get('/api/shop/getProductsOrdered/:user_id', shop_ctr.get_productsOrdered);
-
+app.put('/api/orders/update/:order_id', shop_ctr.update_order);
+app.delete('/api/orders/delete/:order_id', shop_ctr.delete_order);
 
 
 // app.post('/api/users', auth_ctr.createUser)

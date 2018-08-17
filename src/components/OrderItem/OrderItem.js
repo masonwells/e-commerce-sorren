@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class OrderItem extends Component {
-	constructor() {
-		super()
+	constructor(props) {
+		super(props)
 		this.state = {
-			input: '',
+			input: this.props.notes,
 			hidden: false
 		}
 	}
@@ -17,14 +18,16 @@ class OrderItem extends Component {
 
 	deletePurchase() {
 		this.setState({ hidden: !this.state.hidden })
+		axios.delete(`/api/orders/delete/${this.props.orderId}`)
+	}
+
+	sendNotes() {
+		axios.put(`/api/orders/update/${this.props.orderId}`, { notes: this.state.input })
 	}
 
 	render() {
 		const { hidden } = this.state;
 		const { user_id, order_id, image, name, total } = this.props;
-
-		console.log('the props of Order Item', this.props)
-
 		return (
 			!hidden ?
 				<div>
@@ -39,7 +42,7 @@ class OrderItem extends Component {
 							<div>{name}</div>
 							<div>{total}</div>
 							<button onClick={() => this.deletePurchase()}>x</button>
-							<input onChange={(e) => this.handleInput(e.target.value)} />
+							<textarea onChange={(e) => this.handleInput(e.target.value)} onBlur={() => this.sendNotes()} value={this.state.input} rows="4" cols="50"/>
 						</div>
 					</div>
 				</div>

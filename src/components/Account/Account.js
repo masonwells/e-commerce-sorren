@@ -20,9 +20,9 @@ class Account extends Component {
     })
   }
 
-deleteItem(){
-  axios.delete()
-}
+  deleteItem() {
+    axios.delete()
+  }
 
 
   render() {
@@ -40,7 +40,8 @@ deleteItem(){
               total={e.total}
               userId={e.user_id}
               orderId={e.order_id}
-              image={e.img_url}             
+              image={e.img_url}
+              notes={e.notes}
             />
           )
         })}
