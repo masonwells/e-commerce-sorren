@@ -12,13 +12,13 @@ export default class follow extends Component {
         <Header />
         <div className='all'>
           <div className='smallBox'>
-            <a href="https://www.instagram.com/undergroundsaints/">
+            <a href="https://www.instagram.com/">
               {/* <img className='insta' src={instaPhoto} alt='instagram' /> */}
             </a>
-            <a href="https://twitter.com/undrgrndsaints">
+            <a href="https://twitter.com/">
               {/* <img className='twitter' src={twitterPhoto} alt='twitter' /> */}
             </a>
-            <a href="https://www.grailed.com/mygrails/1038111">
+            <a href="https://facebook.com/">
               {/* <img className='grailed' src={grailedPhoto} alt='grailed' /> */}
             </a>
           </div>
