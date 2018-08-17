@@ -4,6 +4,8 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
+import SideDrawer from '../SideBar/SideDrawer'
+import Backdrop from '../BackDrop/Backdrop'
 import Footer from '../Footer/Footer'
 import mainPhoto from './mainphoto.jpg';
 import shopPhoto from './shopPhoto.jpg';
@@ -13,6 +15,10 @@ import { setUser } from './../../ducks/reducer';
 
 
 class Home extends Component {
+  state = {
+      SideDrawerOpen:false
+    }
+
 
   componentDidMount() {
     axios.get('/api/user-data').then(response => {
@@ -33,11 +39,32 @@ class Home extends Component {
 }
 
 
-  render() {
 
+drawerToggleClickHandler = () => {
+    this.setState((prevState)=>{
+      return {sideDrawerOpen: !prevState.sideDrawerOpen};
+    })
+};
+
+
+
+backdropClickHandler = () => {
+  this.setState({sideDrawerOpen: false})
+}
+
+
+  render() {
+      let backdrop;
+
+      if (this.state.sideDrawerOpen){
+        backdrop= <Backdrop click={this.backdropClickHandler}/>
+      }
     return (
       <div className='total'>
-        <Header />
+        <Header drawerClickHandler={this.drawerToggleClickHandler} />
+        <SideDrawer show={this.state.sideDrawerOpen}/>
+        {backdrop}
+       <main style={{marginTop:'64px'}}>
         <div className='background'></div>
 
         <div className='lowerLevelBoxes'>
@@ -64,8 +91,8 @@ class Home extends Component {
           </Link>
         </div>
 
-
-      </div>
+      </main> 
+    </div>
 
     )
   }
