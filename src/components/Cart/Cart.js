@@ -2,6 +2,7 @@
 import swal from 'sweetalert';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { clearCart } from '../../ducks/reducer'
 import axios from 'axios';
 import './Cart.css'
 import StripeCheckout from 'react-stripe-checkout';
@@ -12,7 +13,9 @@ require('dotenv').config();
 class Cart extends Component {
   placeOrder() {
     console.log('id and cart', this.props.id, this.props.cart)
-    axios.post('/api/shop/addProductsOrdered', { user_id: this.props.id, cart: this.props.cart })
+    axios.post('/api/shop/addProductsOrdered', { user_id: this.props.id, cart: this.props.cart }).then(
+      this.props.clearCart()
+    )
   }
 
 
@@ -32,13 +35,6 @@ class Cart extends Component {
 
 
 
-
-
-  // axios.delete('/api/clearcart')
-  // .then(response=>{
-  //     this.setState({
-  //         toCart: true
-  // })
 
   render() {
     // console.log('whole cart', this.props.cart);
@@ -71,7 +67,7 @@ class Cart extends Component {
             stripeKey={process.env.REACT_APP_STRIPE_PUB_KEY}
             amount={total}
           />
-            {/* {this.state.toCart === true ? <Redirect to="/cart"/>  : ''} */}
+          {/* {this.state.toCart === true ? <Redirect to="/cart"/>  : ''} */}
         </div>
       </div>
     )
@@ -85,4 +81,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Cart);
+export default connect(mapStateToProps, { clearCart })(Cart);
