@@ -58,18 +58,20 @@ class Cart extends Component {
       )
     })
     return (
+    <div className="parent">
       <div className="allCheckout">
         <Header />
         {product}
-        <div className="stripe">
-          <StripeCheckout
-            token={this.onToken}
-            stripeKey={process.env.REACT_APP_STRIPE_PUB_KEY}
-            amount={total}
-          />
-          {/* {this.state.toCart === true ? <Redirect to="/cart"/>  : ''} */}
-        </div>
       </div>
+        <div className="stripe">
+        <StripeCheckout
+          token={this.onToken}
+          stripeKey={process.env.REACT_APP_STRIPE_PUB_KEY}
+          amount={total}
+        />
+        {/* {this.state.toCart === true ? <Redirect to="/cart"/>  : ''} */}
+      </div>
+    </div>
     )
   }
 }

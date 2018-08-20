@@ -59,13 +59,13 @@ app.get('/auth/callback', async (req, res) => {
   if (foundUser[0]) {
     // put on session
     req.session.user = foundUser[0];
-    res.redirect('/#/home')
+    res.redirect('/#/')
   } else {
     //create user
     let createdUser = await db.create_user([given_name, family_name, nickname, email, sub])
     //put on session
     req.session.user = createdUser[0]
-    res.redirect('/#/home')
+    res.redirect('/#/')
   }
   // This next block of code will be for fetching the facebook, instagram and twitter shiz when the time comes
   app.get('/api/user-data', (req, res) => {

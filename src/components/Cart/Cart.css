@@ -24,6 +24,18 @@
   width: 300px;
 }
 
+.parent {
+  display: flex;
+  flex-direction: column;
+}
+
+.stripe{
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  /* background: red; */
+  text-align: center;
+}
 
 
 /* 
