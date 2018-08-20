@@ -23,18 +23,16 @@ class Items extends Component {
       <div>
         <Header />
 
-        <div >
+        <div className='allBoxes'>
           {this.props.allItems.filter((item) => item.category === this.props.match.params.category).map((item, i) => {
             return (
-              <div className='allBoxes'>
-                <div key={i}>
-                  <div className='individual'>
-                    <Link to={`/product/${item.id}`}>
-                      <img src={item.img_url} className="photo" />
-                    </Link>
-                    <div>{item.name}</div>
-                    <div> ${item.price}</div>
-                  </div>
+              <div key={i}>
+                <div className='shop-item'>
+                  <Link to={`/product/${item.id}`}>
+                    <div style={{ background: `url(${item.img_url}) center`, backgroundSize: `cover` }} className="photo" ></div>
+                  </Link>
+                  <h2>{item.name}</h2>
+                  <a> ${item.price}</a>
                 </div>
               </div>
             )

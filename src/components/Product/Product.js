@@ -35,11 +35,11 @@ class Product extends Component {
             return (
               <div key={i}>
                 <div className='individual'>
-                  <img src={item.img_url} />
-                  <div>Name: {item.name}</div>
-                  <div>Details: {item.description}</div>
-                  <div> ${item.price}</div>
-                  <div>Size: {item.size}</div>
+                  <div style={{ background: `url(${item.img_url}) center`, backgroundSize: `cover` }} className="item-banner"></div>
+                  <h1>{item.name}</h1>
+                  <a className="item-size">Size: {item.size}</a>
+                  <h2> ${item.price}</h2>
+                  <p className="item-desc">{item.description}</p>
                   <div className="addToCart" onClick={() => this.addToCart(item)}>Add to Cart</div>
                 </div>
               </div>

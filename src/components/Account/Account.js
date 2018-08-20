@@ -29,7 +29,7 @@ class Account extends Component {
     const { orders } = this.state;
     console.log(orders)
     return (
-      <div>
+      <div className="totalOrders">
         <Header />
         {orders.map((e, i) => {
           return (

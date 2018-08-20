@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './OrderItem.css';
 
 class OrderItem extends Component {
 	constructor(props) {
@@ -31,19 +32,20 @@ class OrderItem extends Component {
 		return (
 			!hidden ?
 				<div>
-					<div className='totalTable'>
-						<div className="tableHeader">
-							<div>Image</div>
-							<div>Name</div>
-							<div>Total</div>
-						</div>
+					<div className='totalTable' style={{ background: `url(${image}) center`, backgroundSize: `cover` }}>
 						<div className="tableInfo">
-							<div className="image"><img src={image} style={{ height: `200px` }} /></div>
-							<div>{name}</div>
-							<div>{total}</div>
-							<button onClick={() => this.deletePurchase()}>x</button>
-							<textarea onChange={(e) => this.handleInput(e.target.value)} onBlur={() => this.sendNotes()} value={this.state.input} rows="4" cols="50"/>
+							<div className="image">
+								<div className="exit-wrapper">
+									<button onClick={() => this.deletePurchase()} className="exit-button">x</button>
+								</div>
+								<div className="tableHeader">
+									<h1>{name}</h1>
+									<p>${total}</p>
+								</div>
+								{/* <div>{name}</div> */}
+							</div>
 						</div>
+						<textarea onChange={(e) => this.handleInput(e.target.value)} onBlur={() => this.sendNotes()} value={this.state.input} rows="4" cols="50" className="note-area" />
 					</div>
 				</div>
 				: null

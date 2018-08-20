@@ -1,3 +1,92 @@
+.totalTable {
+  width: 90%;
+  height: 300px;
+	margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+	border-radius: 5px;
+  overflow: hidden;
+	box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.25);
+  transition: 0.25s;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: white;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+}
+
+.tableInfo {
+  width: 100%;
+  height: 200px;
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+
+  width:100%;
+  height:200px;
+  top:0px;
+  left:0px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+}
+
+.tableHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.tableHeader h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 45px;
+  font-weight: 900;
+}
+
+.tableHeader p {
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.exit-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.exit-button {
+  border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	padding: 0;
+	color: black;
+	background-color: transparent;
+  font-size: 20px;
+  border: none;
+}
+
+.totalTable button {
+  color: white;
+  font-size: 20px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+}
+
+.note-area {
+  width: 100%;
+  border: none;
+  height: 100px;
+}
+
+.note-area input:focus {
+  background: white;
+  opacity: 1;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
 /* .totalTable {
   padding-top: 100px;
   display: flex;

@@ -1,3 +1,9 @@
+.item-banner {
+  width: 100%;
+  height: calc(100vh - 56px);
+  background-size: cover;
+}
+
 .box {
   width: 100px;
   height: 100px;
@@ -8,6 +14,42 @@
   width: 100px;
   text-align: center;
 }
+
 .individual{
-  padding-top: 100px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding-bottom: 30px;
+  margin: 0;
+}
+
+.individual h1 {
+  text-transform: uppercase;
+  font-size: 48px;
+  font-weight: 900;
+  padding: 20px 0 0 0;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.individual h2 {
+  padding: 10px;
+  margin: 0;
+}
+
+.individual a {
+  margin: 0;
+  padding: 0;
+}
+
+.individual p {
+  margin: 25px;
+  padding: 0 0 10px 0;
+}
+
+.individual img{
+  height:400px;
+  width:400px;
 }

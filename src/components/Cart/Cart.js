@@ -58,10 +58,10 @@ class Cart extends Component {
       )
     })
     return (
-      <div>
+      <div className="allCheckout">
         <Header />
         {product}
-        <div className="checkOut">
+        <div className="stripe">
           <StripeCheckout
             token={this.onToken}
             stripeKey={process.env.REACT_APP_STRIPE_PUB_KEY}
